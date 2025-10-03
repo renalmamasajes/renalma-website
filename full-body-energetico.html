@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Body Energético | Renalma - Masajes y Bienestar</title>
+
+    <!-- METATAGS PARA REDES SOCIALES -->
+    <meta property="og:title" content="Full Body Energético | Renalma - Masajes y Bienestar" />
+    <meta property="og:description" content="Combina técnicas reductivas y energéticas para moldear la silueta, activar la circulación y renovar tu energía vital." />
+    <meta property="og:image" content="https://renalmamasajes.github.io/files/full-doby.jpg" />
+    <meta property="og:url" content="https://renalma.cl/full-body-energetico" />
+    <meta property="og:type" content="website" />
+
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --light-gray: #E4D4C8;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15); }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: rgba(252, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
+        .desktop-nav { display: flex; align-items: center; gap: 40px; }
+        .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+        .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
+        
+        .desktop-nav .btn {
+            background-image: none;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            font-size: 1em;
+        }
+        .desktop-nav .btn:hover { background-color: var(--primary-color); }
+
+        .desktop-nav a:not(.btn)::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .desktop-nav a:not(.btn):hover::after { width: 100%; }
+        
+        .hamburger-menu { display: none; }
+
+        /* --- MENÚ MÓVIL --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        .mobile-nav.is-active { left: 0; }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu-header .logo { max-width: 180px; }
+        #close-menu-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 2.8em; color: var(--text-color); line-height: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        .mobile-nav a {
+            font-family: var(--font-title);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .mobile-nav .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            text-align: center; height: 70vh; min-height: 400px;
+            background-image: linear-gradient(rgba(60, 54, 51, 0.6), rgba(60, 54, 51, 0.6)), url('https://renalmamasajes.github.io/files/full-doby.jpg');
+            background-size: cover; background-position: center;
+            color: var(--white-color); padding: 0 20px; margin-top: 80px;
+        }
+        .hero-text { max-width: 800px; animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { font-family: var(--font-title); font-size: 4em; font-weight: 600; margin: 0 0 20px 0; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 30px; }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { padding: 80px 0; }
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .content-text { }
+        .content-image { text-align: center; }
+        .content-image img { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); }
+
+        .section-title { font-family: var(--font-title); font-size: 2.8em; color: var(--primary-color); margin-bottom: 30px; }
+        .section-text { font-size: 1.1em; margin-bottom: 25px; }
+
+        .benefits-list {
+            background: var(--white-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(141, 123, 104, 0.15);
+            margin: 40px 0;
+        }
+        .benefits-list h3 { font-family: var(--font-title); font-size: 2.2em; color: var(--primary-color); margin-bottom: 25px; }
+        .benefit-item { margin-bottom: 20px; padding-left: 30px; position: relative; }
+        .benefit-item::before { content: '✨'; position: absolute; left: 0; top: 0; font-size: 1.2em; }
+
+        .process-section {
+            background: var(--white-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .process-step {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 15px;
+            background: var(--bg-color);
+            transition: transform 0.3s ease;
+        }
+        .process-step:hover { transform: translateY(-10px); }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px auto;
+        }
+        .step-title { font-family: var(--font-title); font-size: 1.5em; color: var(--secondary-color); margin-bottom: 15px; }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 15px;
+            margin: 60px 0;
+        }
+        .cta-title { font-family: var(--font-title); font-size: 2.5em; margin-bottom: 20px; }
+        .cta-text { font-size: 1.2em; margin-bottom: 30px; }
+        .cta-btn {
+            background: var(--white-color);
+            color: var(--primary-color);
+            font-size: 1.1em;
+            padding: 15px 40px;
+        }
+
+        footer { background-color: var(--secondary-color); color: var(--bg-color); text-align: center; padding: 30px 20px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-logo { max-width: 160px; }
+            .hamburger-menu {
+                display: block; cursor: pointer; border: none; background: transparent;
+                z-index: 1001; position: relative; width: 30px; height: 21px;
+            }
+            .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
+            
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.1em; }
+            .content-grid { grid-template-columns: 1fr; gap: 40px; }
+            .process-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2.2em; }
+            .mobile-nav a { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html">
+                <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                    <li><a href="tips.html">Tips</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="agenda.html" class="btn">Agendar Cita</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu-header">
+            <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+            <button id="close-menu-btn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="masajes.html">Masajes</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="agenda.html" class="btn">Agendar Cita</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">Full Body Energético</h1>
+                <p class="hero-subtitle">Moldea tu silueta mientras renuevas tu energía vital</p>
+                <a href="agenda.html" class="btn">Reserva tu Sesión</a>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <h2 class="section-title">Una Experiencia Transformadora</h2>
+                        <p class="section-text">
+                            El **Full Body Energético** es mucho más que un masaje tradicional. Esta terapia integral combina técnicas manuales especializadas con un enfoque energético profundo, diseñado para trabajar tanto el aspecto físico como el bienestar emocional y espiritual.
+                        </p>
+                        <p class="section-text">
+                            Durante esta sesión de 75 minutos, utilizamos movimientos específicos que activan la circulación sanguínea y linfática, ayudando a moldear la silueta de manera natural mientras liberamos bloqueos energéticos que pueden estar afectando tu vitalidad.
+                        </p>
+                        <p class="section-text">
+                            Esta terapia es ideal para personas que buscan no solo mejorar su apariencia física, sino también reconectar con su energía interior y experimentar una sensación profunda de renovación y bienestar.
+                        </p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://renalmamasajes.github.io/files/full-doby.jpg" alt="Masaje Full Body Energético">
+                    </div>
+                </div>
+
+                <div class="benefits-list">
+                    <h3>Beneficios del Full Body Energético</h3>
+                    <div class="benefit-item">
+                        <strong>Moldeo de la silueta:</strong> Las técnicas reductivas ayudan a tonificar y definir el contorno corporal de manera natural.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Activación circulatoria:</strong> Mejora significativamente la circulación sanguínea y linfática, reduciendo la retención de líquidos.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Renovación energética:</strong> Libera bloqueos energéticos y restaura el flujo natural de energía vital.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Reducción del estrés:</strong> Proporciona una profunda relajación que calma el sistema nervioso.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Mejora de la piel:</strong> Estimula la regeneración celular y mejora la textura y apariencia de la piel.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Equilibrio emocional:</strong> Ayuda a liberar tensiones emocionales almacenadas en el cuerpo.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">¿Cómo es una Sesión?</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Consulta Inicial</h3>
+                        <p>Conversamos sobre tus objetivos y necesidades específicas para personalizar la sesión.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Preparación</h3>
+                        <p>Creamos un ambiente relajante con música suave, aromas naturales y temperatura ideal.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Técnicas Reductivas</h3>
+                        <p>Aplicamos movimientos específicos para activar la circulación y trabajar el moldeo corporal.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Trabajo Energético</h3>
+                        <p>Integramos técnicas energéticas para liberar bloqueos y restaurar el equilibrio vital.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3 class="step-title">Integración</h3>
+                        <p>Finalizamos con momentos de quietud para que tu cuerpo integre todos los beneficios.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3 class="step-title">Recomendaciones</h3>
+                        <p>Te brindamos consejos personalizados para mantener los beneficios en casa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">¿Lista para Transformar tu Energía?</h2>
+                <p class="cta-text">
+                    Regálate esta experiencia única que combina bienestar físico y renovación energética. 
+                    Tu cuerpo y tu alma te lo agradecerán.
+                </p>
+                <a href="agenda.html" class="btn cta-btn">Agenda tu Full Body Energético</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renalma | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = mobileNav.querySelectorAll('a');
+
+        function openMenu() {
+            mobileNav.classList.add('is-active');
+            document.body.classList.add('nav-open');
+        }
+
+        function closeMenu() {
+            mobileNav.classList.remove('is-active');
+            document.body.classList.remove('nav-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>

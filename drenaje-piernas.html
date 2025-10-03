@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drenaje para Piernas Cansadas | Renalma - Masajes y Bienestar</title>
+
+    <!-- METATAGS PARA REDES SOCIALES -->
+    <meta property="og:title" content="Drenaje para Piernas Cansadas | Renalma - Masajes y Bienestar" />
+    <meta property="og:description" content="Alivia la pesadez y reduce la hinchazón en las piernas, mejorando la circulación. Ideal para embarazadas o postparto." />
+    <meta property="og:image" content="https://renalmamasajes.github.io/files/piernas-cansadas.jpg" />
+    <meta property="og:url" content="https://renalma.cl/drenaje-piernas" />
+    <meta property="og:type" content="website" />
+
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --light-gray: #E4D4C8;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15); }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: rgba(252, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
+        .desktop-nav { display: flex; align-items: center; gap: 40px; }
+        .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+        .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
+        
+        .desktop-nav .btn {
+            background-image: none;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            font-size: 1em;
+        }
+        .desktop-nav .btn:hover { background-color: var(--primary-color); }
+
+        .desktop-nav a:not(.btn)::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .desktop-nav a:not(.btn):hover::after { width: 100%; }
+        
+        .hamburger-menu { display: none; }
+
+        /* --- MENÚ MÓVIL --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        .mobile-nav.is-active { left: 0; }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu-header .logo { max-width: 180px; }
+        #close-menu-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 2.8em; color: var(--text-color); line-height: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        .mobile-nav a {
+            font-family: var(--font-title);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .mobile-nav .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            text-align: center; height: 70vh; min-height: 400px;
+            background-image: linear-gradient(rgba(60, 54, 51, 0.6), rgba(60, 54, 51, 0.6)), url('https://renalmamasajes.github.io/files/piernas-cansadas.jpg');
+            background-size: cover; background-position: center;
+            color: var(--white-color); padding: 0 20px; margin-top: 80px;
+        }
+        .hero-text { max-width: 800px; animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { font-family: var(--font-title); font-size: 4em; font-weight: 600; margin: 0 0 20px 0; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 30px; }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { padding: 80px 0; }
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .content-text { }
+        .content-image { text-align: center; }
+        .content-image img { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); }
+
+        .section-title { font-family: var(--font-title); font-size: 2.8em; color: var(--primary-color); margin-bottom: 30px; }
+        .section-text { font-size: 1.1em; margin-bottom: 25px; }
+
+        .benefits-list {
+            background: var(--white-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(141, 123, 104, 0.15);
+            margin: 40px 0;
+        }
+        .benefits-list h3 { font-family: var(--font-title); font-size: 2.2em; color: var(--primary-color); margin-bottom: 25px; }
+        .benefit-item { margin-bottom: 20px; padding-left: 30px; position: relative; }
+        .benefit-item::before { content: '🦵'; position: absolute; left: 0; top: 0; font-size: 1.2em; }
+
+        .pregnancy-section {
+            background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .pregnancy-content { text-align: center; max-width: 800px; margin: 0 auto; }
+        .pregnancy-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            margin: 0 auto 30px auto;
+        }
+
+        .symptoms-section {
+            background: var(--white-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .symptoms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .symptom-card {
+            padding: 30px;
+            background: var(--bg-color);
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .symptom-card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--primary-color);
+        }
+        .symptom-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .symptom-title { font-family: var(--font-title); font-size: 1.6em; color: var(--secondary-color); margin-bottom: 15px; }
+
+        .technique-flow {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .flow-steps { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .flow-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+        }
+        .flow-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .step-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin: 0 auto 15px auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 15px;
+            margin: 60px 0;
+        }
+        .cta-title { font-family: var(--font-title); font-size: 2.5em; margin-bottom: 20px; }
+        .cta-text { font-size: 1.2em; margin-bottom: 30px; }
+        .cta-btn {
+            background: var(--white-color);
+            color: var(--primary-color);
+            font-size: 1.1em;
+            padding: 15px 40px;
+        }
+
+        footer { background-color: var(--secondary-color); color: var(--bg-color); text-align: center; padding: 30px 20px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-logo { max-width: 160px; }
+            .hamburger-menu {
+                display: block; cursor: pointer; border: none; background: transparent;
+                z-index: 1001; position: relative; width: 30px; height: 21px;
+            }
+            .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
+            
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.1em; }
+            .content-grid { grid-template-columns: 1fr; gap: 40px; }
+            .symptoms-grid { grid-template-columns: 1fr; }
+            .flow-steps { flex-direction: column; }
+            .flow-step:not(:last-child)::after { 
+                content: '↓'; 
+                right: auto; 
+                bottom: -30px; 
+                top: auto; 
+                transform: none; 
+            }
+            .section-title { font-size: 2.2em; }
+            .mobile-nav a { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html">
+                <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                    <li><a href="tips.html">Tips</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="agenda.html" class="btn">Agendar Cita</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu-header">
+            <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+            <button id="close-menu-btn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="masajes.html">Masajes</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="agenda.html" class="btn">Agendar Cita</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">Drenaje para Piernas Cansadas</h1>
+                <p class="hero-subtitle">Alivia la pesadez y renueva la vitalidad de tus piernas</p>
+                <a href="agenda.html" class="btn">Reserva tu Sesión</a>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <h2 class="section-title">Alivio Inmediato</h2>
+                        <p class="section-text">
+                            El **Drenaje para Piernas Cansadas** es una terapia especializada diseñada específicamente para aliviar la pesadez, hinchazón y molestias en las piernas. Esta técnica combina movimientos de drenaje linfático con masajes circulatorios para reactivar el flujo sanguíneo y linfático desde los pies hasta la zona inguinal.
+                        </p>
+                        <p class="section-text">
+                            Durante esta sesión de 60 minutos, aplicamos técnicas manuales que siguen el recorrido natural del sistema circulatorio y linfático de las piernas. Los movimientos son ascendentes, suaves pero efectivos, diseñados para impulsar los líquidos retenidos hacia el corazón y facilitar su eliminación natural.
+                        </p>
+                        <p class="section-text">
+                            Esta terapia es especialmente beneficiosa para embarazadas, personas en período postparto, quienes permanecen mucho tiempo de pie o sentados, y cualquier persona que experimente sensación de piernas pesadas o hinchadas.
+                        </p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://renalmamasajes.github.io/files/piernas-cansadas.jpg" alt="Drenaje para Piernas Cansadas">
+                    </div>
+                </div>
+
+                <div class="benefits-list">
+                    <h3>Beneficios del Drenaje para Piernas Cansadas</h3>
+                    <div class="benefit-item">
+                        <strong>Alivio inmediato de pesadez:</strong> Reduce significativamente la sensación de piernas cansadas y pesadas.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Reducción de hinchazón:</strong> Disminuye la inflamación y el edema en piernas, tobillos y pies.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Mejora circulatoria:</strong> Reactiva la circulación sanguínea y linfática de retorno.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Prevención de varices:</strong> Ayuda a prevenir la formación de varices y mejora las existentes.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Relajación profunda:</strong> Proporciona una sensación de ligereza y bienestar general.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Ideal para embarazo:</strong> Seguro y efectivo durante el embarazo y postparto.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pregnancy-section">
+            <div class="container">
+                <div class="pregnancy-content">
+                    <div class="pregnancy-icon">🤱</div>
+                    <h2 class="section-title" style="margin-bottom: 30px;">Especial para Embarazadas y Postparto</h2>
+                    <p class="section-text">
+                        Durante el embarazo, el cuerpo experimenta cambios significativos que pueden afectar la circulación en las piernas. El aumento del volumen sanguíneo, los cambios hormonales y la presión del útero sobre las venas pueden causar hinchazón y pesadez en las extremidades inferiores.
+                    </p>
+                    <p class="section-text">
+                        Nuestro drenaje para piernas cansadas está especialmente adaptado para mujeres embarazadas y en período postparto. Utilizamos técnicas suaves y seguras que no solo alivian las molestias, sino que también proporcionan un momento de relajación y conexión con el cuerpo durante esta etapa tan especial.
+                    </p>
+                    <p class="section-text">
+                        En el postparto, esta terapia ayuda a acelerar la recuperación, reduce la retención de líquidos acumulada durante el embarazo y proporciona alivio a las nuevas madres que necesitan cuidar su bienestar físico y emocional.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="symptoms-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Síntomas que Aliviamos</h2>
+                <div class="symptoms-grid">
+                    <div class="symptom-card">
+                        <span class="symptom-icon">😴</span>
+                        <h3 class="symptom-title">Pesadez</h3>
+                        <p>Sensación de piernas pesadas y cansadas, especialmente al final del día.</p>
+                    </div>
+                    <div class="symptom-card">
+                        <span class="symptom-icon">💧</span>
+                        <h3 class="symptom-title">Hinchazón</h3>
+                        <p>Inflamación en piernas, tobillos y pies por retención de líquidos.</p>
+                    </div>
+                    <div class="symptom-card">
+                        <span class="symptom-icon">🔥</span>
+                        <h3 class="symptom-title">Calor</h3>
+                        <p>Sensación de calor y ardor en las piernas, especialmente en verano.</p>
+                    </div>
+                    <div class="symptom-card">
+                        <span class="symptom-icon">⚡</span>
+                        <h3 class="symptom-title">Calambres</h3>
+                        <p>Contracciones musculares involuntarias, frecuentes durante la noche.</p>
+                    </div>
+                    <div class="symptom-card">
+                        <span class="symptom-icon">🕷️</span>
+                        <h3 class="symptom-title">Arañitas</h3>
+                        <p>Pequeñas venas visibles que pueden indicar problemas circulatorios.</p>
+                    </div>
+                    <div class="symptom-card">
+                        <span class="symptom-icon">😣</span>
+                        <h3 class="symptom-title">Dolor</h3>
+                        <p>Molestias y dolor en las piernas por mala circulación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="technique-flow">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Técnica de Drenaje</h2>
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <div class="step-circle">🦶</div>
+                        <h4>Inicio en Pies</h4>
+                        <p>Comenzamos desde los pies con movimientos suaves</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-circle">🔄</div>
+                        <h4>Ascenso Gradual</h4>
+                        <p>Movimientos ascendentes siguiendo el flujo linfático</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-circle">💪</div>
+                        <h4>Pantorrillas</h4>
+                        <p>Trabajo específico en la "bomba muscular"</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-circle">🦵</div>
+                        <h4>Muslos</h4>
+                        <p>Drenaje profundo hacia ganglios inguinales</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-circle">✨</div>
+                        <h4>Finalización</h4>
+                        <p>Integración y sensación de ligereza</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">¿Lista para Sentir tus Piernas Ligeras?</h2>
+                <p class="cta-text">
+                    Libérate de la pesadez y hinchazón. Regálate el alivio que tus piernas necesitan 
+                    y disfruta de la sensación de ligereza y bienestar.
+                </p>
+                <a href="agenda.html" class="btn cta-btn">Agenda tu Drenaje para Piernas Cansadas</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renalma | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = mobileNav.querySelectorAll('a');
+
+        function openMenu() {
+            mobileNav.classList.add('is-active');
+            document.body.classList.add('nav-open');
+        }
+
+        function closeMenu() {
+            mobileNav.classList.remove('is-active');
+            document.body.classList.remove('nav-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>

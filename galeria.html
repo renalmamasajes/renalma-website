@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería | Renalma - Espacios de Bienestar</title>
+
+    <!-- METATAGS PARA REDES SOCIALES -->
+    <meta property="og:title" content="Galería | Renalma - Espacios de Bienestar" />
+    <meta property="og:description" content="Descubre nuestros espacios sagrados diseñados para tu relajación y bienestar. Ambientes que nutren el alma." />
+    <meta property="og:image" content="https://renalmamasajes.github.io/files/img-inicio.jpg" />
+    <meta property="og:url" content="https://renalma.cl/galeria" />
+    <meta property="og:type" content="website" />
+
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --light-gray: #E4D4C8;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15); }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: rgba(252, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
+        .desktop-nav { display: flex; align-items: center; gap: 40px; }
+        .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+        .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
+        
+        .desktop-nav .btn {
+            background-image: none;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            font-size: 1em;
+        }
+        .desktop-nav .btn:hover { background-color: var(--primary-color); }
+
+        .desktop-nav a:not(.btn)::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .desktop-nav a:not(.btn):hover::after { width: 100%; }
+        
+        .hamburger-menu { display: none; }
+
+        /* --- MENÚ MÓVIL --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        .mobile-nav.is-active { left: 0; }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu-header .logo { max-width: 180px; }
+        #close-menu-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 2.8em; color: var(--text-color); line-height: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        .mobile-nav a {
+            font-family: var(--font-title);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .mobile-nav .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            text-align: center; height: 60vh; min-height: 400px;
+            background-image: linear-gradient(rgba(60, 54, 51, 0.5), rgba(60, 54, 51, 0.5)), url('https://renalmamasajes.github.io/files/img-inicio.jpg');
+            background-size: cover; background-position: center;
+            color: var(--white-color); padding: 0 20px; margin-top: 80px;
+        }
+        .hero-text { max-width: 800px; animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { font-family: var(--font-title); font-size: 4em; font-weight: 600; margin: 0 0 20px 0; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 30px; }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { padding: 80px 0; }
+        .section-title { font-family: var(--font-title); font-size: 3em; color: var(--primary-color); margin-bottom: 20px; text-align: center; }
+        .section-subtitle { text-align: center; font-size: 1.2em; color: var(--secondary-color); max-width: 600px; margin: 0 auto 60px auto; }
+
+        /* --- FILTROS DE GALERÍA --- */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: var(--white-color);
+            color: var(--secondary-color);
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: 2px solid var(--light-gray);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-color: var(--primary-color);
+        }
+
+        /* --- GALERÍA MASONRY --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .gallery-item {
+            background: var(--white-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        .gallery-item.tall { grid-row: span 2; }
+        .gallery-item.wide { grid-column: span 2; }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item.tall .gallery-image { height: 400px; }
+        .gallery-item:hover .gallery-image { transform: scale(1.05); }
+
+        .gallery-content {
+            padding: 25px;
+        }
+        .gallery-title {
+            font-family: var(--font-title);
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .gallery-description {
+            color: var(--secondary-color);
+            font-size: 0.95em;
+        }
+        .gallery-category {
+            display: inline-block;
+            background: var(--bg-color);
+            color: var(--secondary-color);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        /* --- MODAL DE IMAGEN --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90%;
+            object-fit: contain;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: var(--white-color);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close:hover { color: var(--primary-color); }
+
+        /* --- SECCIÓN DE AMBIENTE --- */
+        .ambience-section {
+            background: var(--white-color);
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+        .ambience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .ambience-card {
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        .ambience-card:hover { transform: translateY(-10px); }
+        .ambience-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .ambience-title {
+            font-family: var(--font-title);
+            font-size: 1.8em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        footer { background-color: var(--secondary-color); color: var(--bg-color); text-align: center; padding: 30px 20px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-logo { max-width: 160px; }
+            .hamburger-menu {
+                display: block; cursor: pointer; border: none; background: transparent;
+                z-index: 1001; position: relative; width: 30px; height: 21px;
+            }
+            .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
+            
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.1em; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item.wide { grid-column: span 1; }
+            .gallery-filters { gap: 10px; }
+            .filter-btn { padding: 10px 20px; font-size: 0.9em; }
+            .section-title { font-size: 2.2em; }
+            .mobile-nav a { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html">
+                <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                    <li><a href="tips.html">Tips</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="agenda.html" class="btn">Agendar Cita</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu-header">
+            <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+            <button id="close-menu-btn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="masajes.html">Masajes</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="agenda.html" class="btn">Agendar Cita</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">Galería de Espacios</h1>
+                <p class="hero-subtitle">Descubre los ambientes sagrados donde tu bienestar cobra vida</p>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <h2 class="section-title">Nuestros Espacios de Bienestar</h2>
+                <p class="section-subtitle">
+                    Cada rincón de Renalma ha sido cuidadosamente diseñado para crear una atmósfera de paz, 
+                    tranquilidad y conexión contigo misma.
+                </p>
+
+                <div class="gallery-filters">
+                    <button class="filter-btn active" onclick="filterGallery('all')">Todos</button>
+                    <button class="filter-btn" onclick="filterGallery('salas')">Salas de Masaje</button>
+                    <button class="filter-btn" onclick="filterGallery('ambiente')">Ambiente</button>
+                    <button class="filter-btn" onclick="filterGallery('detalles')">Detalles</button>
+                    <button class="filter-btn" onclick="filterGallery('productos')">Productos</button>
+                </div>
+
+                <div class="gallery-grid" id="gallery">
+                    <!-- Salas de Masaje -->
+                    <div class="gallery-item wide" data-category="salas" onclick="openModal('https://renalmamasajes.github.io/files/img-inicio.jpg')">
+                        <img src="https://renalmamasajes.github.io/files/img-inicio.jpg" alt="Sala Principal de Masajes" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Sala Principal de Masajes</h3>
+                            <p class="gallery-description">Un espacio amplio y luminoso diseñado para tu máxima comodidad y relajación.</p>
+                            <span class="gallery-category">Salas de Masaje</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="salas" onclick="openModal('https://images.unsplash.com/photo-1544161515-cfd636ee4844?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800')">
+                        <img src="https://images.unsplash.com/photo-1544161515-cfd636ee4844?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Sala de Relajación" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Sala de Relajación</h3>
+                            <p class="gallery-description">Espacio íntimo para masajes relajantes y terapias energéticas.</p>
+                            <span class="gallery-category">Salas de Masaje</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item tall" data-category="ambiente" onclick="openModal('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800')">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Ambiente Zen" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Ambiente Zen</h3>
+                            <p class="gallery-description">Decoración minimalista que invita a la contemplación y la paz interior.</p>
+                            <span class="gallery-category">Ambiente</span>
+                        </div>
+                    </div>
+
+                    <!-- Productos y Aceites -->
+                    <div class="gallery-item" data-category="productos" onclick="openModal('https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800')">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Aceites Esenciales" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Aceites Esenciales</h3>
+                            <p class="gallery-description">Selección premium de aceites naturales para cada tipo de terapia.</p>
+                            <span class="gallery-category">Productos</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="productos" onclick="openModal('https://renalmamasajes.github.io/files/piedras-calientes.jpg')">
+                        <img src="https://renalmamasajes.github.io/files/piedras-calientes.jpg" alt="Piedras Volcánicas" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Piedras Volcánicas</h3>
+                            <p class="gallery-description">Piedras de basalto natural para terapias de calor profundo.</p>
+                            <span class="gallery-category">Productos</span>
+                        </div>
+                    </div>
+
+                    <!-- Detalles y Ambiente -->
+                    <div class="gallery-item" data-category="detalles" onclick="openModal('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800')">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Velas Aromáticas" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Velas Aromáticas</h3>
+                            <p class="gallery-description">Iluminación suave que crea la atmósfera perfecta para la relajación.</p>
+                            <span class="gallery-category">Detalles</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="ambiente" onclick="openModal('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800')">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Zona de Recepción" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Zona de Recepción</h3>
+                            <p class="gallery-description">Espacio acogedor donde comienza tu experiencia de bienestar.</p>
+                            <span class="gallery-category">Ambiente</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="detalles" onclick="openModal('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800')">
+                        <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Flores Frescas" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Flores Frescas</h3>
+                            <p class="gallery-description">Detalles naturales que aportan frescura y energía vital al espacio.</p>
+                            <span class="gallery-category">Detalles</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item wide" data-category="salas" onclick="openModal('https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800')">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Sala de Drenaje Linfático" class="gallery-image">
+                        <div class="gallery-content">
+                            <h3 class="gallery-title">Sala de Drenaje Linfático</h3>
+                            <p class="gallery-description">Espacio especializado para terapias de drenaje y desintoxicación.</p>
+                            <span class="gallery-category">Salas de Masaje</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ambience-section">
+            <div class="container">
+                <h2 class="section-title">Elementos que Crean Magia</h2>
+                <div class="ambience-grid">
+                    <div class="ambience-card">
+                        <span class="ambience-icon">🕯️</span>
+                        <h3 class="ambience-title">Iluminación Cálida</h3>
+                        <p>Velas y luces suaves que crean una atmósfera íntima y relajante.</p>
+                    </div>
+                    <div class="ambience-card">
+                        <span class="ambience-icon">🌿</span>
+                        <h3 class="ambience-title">Aromas Naturales</h3>
+                        <p>Inciensos y aceites esenciales que purifican y elevan el espíritu.</p>
+                    </div>
+                    <div class="ambience-card">
+                        <span class="ambience-icon">🎵</span>
+                        <h3 class="ambience-title">Música Sanadora</h3>
+                        <p>Melodías suaves que acompañan tu viaje hacia la relajación profunda.</p>
+                    </div>
+                    <div class="ambience-card">
+                        <span class="ambience-icon">🌸</span>
+                        <h3 class="ambience-title">Elementos Naturales</h3>
+                        <p>Plantas, flores y cristales que conectan con la energía de la naturaleza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para imágenes -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renalma | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación móvil
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = mobileNav.querySelectorAll('a');
+
+        function openMenu() {
+            mobileNav.classList.add('is-active');
+            document.body.classList.add('nav-open');
+        }
+
+        function closeMenu() {
+            mobileNav.classList.remove('is-active');
+            document.body.classList.remove('nav-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Filtros de galería
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Actualizar botones activos
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filtrar elementos
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal de imágenes
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Cerrar modal al hacer clic fuera de la imagen
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

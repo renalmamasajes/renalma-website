@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips Astrales y Flor Terapia | Renalma - Bienestar Holístico</title>
+
+    <!-- METATAGS PARA REDES SOCIALES -->
+    <meta property="og:title" content="Tips Astrales y Flor Terapia | Renalma - Bienestar Holístico" />
+    <meta property="og:description" content="Descubre consejos astrológicos, rituales de luna, terapia floral y prácticas de bienestar para conectar con tu esencia." />
+    <meta property="og:image" content="https://renalmamasajes.github.io/files/solocuerpo.png" />
+    <meta property="og:url" content="https://renalma.cl/tips" />
+    <meta property="og:type" content="website" />
+
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --light-gray: #E4D4C8;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            width: 100%;
+        }
+
+        /* --- ANIMACIONES Y EFECTOS INTERACTIVOS --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            padding: 15px 35px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(164, 144, 124, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover { 
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(164, 144, 124, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: rgba(252, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
+        .desktop-nav { display: flex; align-items: center; gap: 40px; }
+        .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+        .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
+        
+        .desktop-nav .btn {
+            background-image: none;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            font-size: 1em;
+        }
+        .desktop-nav .btn:hover { background-color: var(--primary-color); }
+
+        .desktop-nav a:not(.btn)::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .desktop-nav a:not(.btn):hover::after { width: 100%; }
+        
+        .hamburger-menu { display: none; }
+
+        /* --- MENÚ MÓVIL --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        .mobile-nav.is-active { left: 0; }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu-header .logo { max-width: 180px; }
+        #close-menu-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 2.8em; color: var(--text-color); line-height: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        .mobile-nav a {
+            font-family: var(--font-title);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .mobile-nav .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            text-align: center; height: 60vh; min-height: 400px;
+            background: linear-gradient(135deg, #2c1810, #4a2c1a);
+            color: var(--white-color); padding: 0 20px; margin-top: 80px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        .hero-text { max-width: 800px; animation: fadeIn 1.5s ease-in-out; position: relative; z-index: 1; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { font-family: var(--font-title); font-size: 4em; font-weight: 600; margin: 0 0 20px 0; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 30px; }
+
+        /* --- NAVEGACIÓN DE CATEGORÍAS --- */
+        .category-nav {
+            background: var(--white-color);
+            padding: 30px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 80px;
+            z-index: 50;
+        }
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .category-btn {
+            background: var(--bg-color);
+            color: var(--secondary-color);
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .category-btn:hover, .category-btn.active {
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-color: var(--primary-color);
+        }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { padding: 60px 0; }
+        .section-title { font-family: var(--font-title); font-size: 3em; color: var(--primary-color); margin-bottom: 50px; text-align: center; }
+
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 80px; }        .tip-card {
+            background: var(--white-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(141, 123, 104, 0.15);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin-bottom: 40px;
+            border: 3px solid transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .tip-card:hover::before {
+            opacity: 0.03;
+        }
+
+        .tip-card:hover { 
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(141, 123, 104, 0.25);
+            border-color: var(--primary-color);
+              .tip-header {
+            padding: 35px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .tip-icon { 
+            font-size: 3.2em; 
+            margin-bottom: 20px; 
+            display: block; 
+            transition: all 0.4s ease;
+        }
+        .tip-card:hover .tip-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .tip-title { 
+            font-family: var(--font-title); 
+            font-size: 1.9em; 
+            margin: 0; 
+            transition: all 0.3s ease;
+        }}
+
+        .tip-content { 
+            padding: 35px; 
+            position: relative;
+            z-index: 2;
+        }
+        .tip-description { 
+            font-size: 1.15em; 
+            margin-bottom: 25px; 
+            color: var(--secondary-color); 
+            line-height: 1.7;
+        }
+        .tip-steps { margin-bottom: 25px; }
+        .tip-step { margin-bottom: 15px; padding-left: 25px; position: relative; }
+        .tip-step::before { content: '✨'; position: absolute; left: 0; top: 0; }
+
+        .tip-benefits {
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .tip-benefits h4 { font-family: var(--font-title); color: var(--primary-color); margin-bottom: 15px; }
+
+        /* --- SECCIONES ESPECÍFICAS --- */
+        .astral-section { display: block; }
+        .floral-section { display: none; }
+        .rituals-section { display: none; }
+        .wellness-section { display: none; }
+
+        .section.hidden { display: none; }
+
+        footer { background-color: var(--secondary-color); color: var(--bg-color); text-align: center; padding: 30px 20px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-logo { max-width: 160px; }
+            .hamburger-menu {
+                display: block; cursor: pointer; border: none; background: transparent;
+                z-index: 1001; position: relative; width: 30px; height: 21px;
+            }
+            .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
+            
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.1em; }
+            .tips-grid { grid-template-columns: 1fr; }
+            .category-buttons { gap: 10px; }
+            .category-btn { padding: 10px 20px; font-size: 0.9em; }
+            .section-title { font-size: 2.2em; }
+            .mobile-nav a { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html">
+                <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                    <li><a href="tips.html">Tips</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="agenda.html" class="btn">Agendar Cita</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu-header">
+            <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+            <button id="close-menu-btn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="masajes.html">Masajes</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="agenda.html" class="btn">Agendar Cita</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">Tips de Bienestar Holístico</h1>
+                <p class="hero-subtitle">Conecta con tu esencia a través de la sabiduría astral y la terapia floral</p>
+            </div>
+        </section>
+
+        <nav class="category-nav">
+            <div class="container">
+                <div class="category-buttons">
+                    <button class="category-btn active" onclick="showSection('astral')">🌙 Astrología</button>
+                    <button class="category-btn" onclick="showSection('floral')">🌸 Flor Terapia</button>
+                    <button class="category-btn" onclick="showSection('rituals')">🕯️ Rituales</button>
+                    <button class="category-btn" onclick="showSection('wellness')">✨ Bienestar</button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="main-content">
+            <div class="container">
+                
+                <!-- SECCIÓN ASTROLOGÍA -->
+                <div id="astral" class="section astral-section">
+                    <h2 class="section-title">Sabiduría Astral</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🌙</span>
+                                <h3 class="tip-title">Rituales de Luna Nueva</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">La Luna Nueva es el momento perfecto para plantar semillas de intención y comenzar nuevos proyectos. Su energía nos invita a la introspección y la manifestación.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Prepara un espacio sagrado con velas blancas y cristales de cuarzo</div>
+                                    <div class="tip-step">Escribe tus intenciones en papel con tinta dorada o plateada</div>
+                                    <div class="tip-step">Medita durante 15 minutos visualizando tus objetivos</div>
+                                    <div class="tip-step">Guarda el papel bajo tu almohada durante 3 noches</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Claridad mental, enfoque en objetivos, conexión con ciclos naturales, manifestación consciente.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🌕</span>
+                                <h3 class="tip-title">Liberación en Luna Llena</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">La Luna Llena amplifica las emociones y es ideal para liberar lo que ya no nos sirve. Su energía nos ayuda a soltar patrones limitantes.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Toma un baño con sales del mar muerto y aceite de lavanda</div>
+                                    <div class="tip-step">Escribe en papel lo que deseas liberar de tu vida</div>
+                                    <div class="tip-step">Quema el papel de forma segura mientras repites afirmaciones de liberación</div>
+                                    <div class="tip-step">Termina con una meditación de gratitud</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Liberación emocional, limpieza energética, renovación personal, paz interior.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">♈</span>
+                                <h3 class="tip-title">Energía de los Signos</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Cada signo zodiacal tiene cualidades únicas que podemos canalizar para nuestro crecimiento personal, independientemente de nuestro signo natal.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Aries: Inicia proyectos con valentía y determinación</div>
+                                    <div class="tip-step">Tauro: Cultiva la paciencia y disfruta los placeres sensoriales</div>
+                                    <div class="tip-step">Géminis: Comunícate con claridad y mantén la curiosidad</div>
+                                    <div class="tip-step">Cáncer: Nutre tus emociones y fortalece vínculos familiares</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Autoconocimiento, desarrollo de cualidades, equilibrio energético, crecimiento personal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🔮</span>
+                                <h3 class="tip-title">Meditación con Cristales</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Los cristales amplifican nuestra energía y nos ayudan a conectar con diferentes aspectos de nuestro ser. Cada piedra tiene propiedades específicas.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Amatista: Para la intuición y conexión espiritual</div>
+                                    <div class="tip-step">Cuarzo rosa: Para el amor propio y la sanación emocional</div>
+                                    <div class="tip-step">Citrino: Para la abundancia y la confianza personal</div>
+                                    <div class="tip-step">Obsidiana: Para la protección y liberación de negatividad</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Equilibrio energético, claridad mental, protección espiritual, sanación emocional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN FLOR TERAPIA -->
+                <div id="floral" class="section floral-section">
+                    <h2 class="section-title">Terapia Floral</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🌸</span>
+                                <h3 class="tip-title">Esencias de Bach para el Estrés</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Las flores de Bach son remedios naturales que trabajan a nivel emocional, ayudando a equilibrar estados mentales y emocionales específicos.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Rescue Remedy: Para situaciones de crisis y estrés agudo</div>
+                                    <div class="tip-step">Impatiens: Para la impaciencia y irritabilidad</div>
+                                    <div class="tip-step">White Chestnut: Para pensamientos repetitivos y preocupaciones</div>
+                                    <div class="tip-step">Elm: Para sentimientos de agobio y responsabilidad excesiva</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Calma mental, equilibrio emocional, reducción del estrés, claridad de pensamiento.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🌹</span>
+                                <h3 class="tip-title">Agua de Rosas para el Amor Propio</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">El agua de rosas es un elixir de amor y autoestima que nutre tanto la piel como el alma, conectándonos con nuestra feminidad sagrada.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Rocía agua de rosas en tu rostro cada mañana mientras repites afirmaciones de amor</div>
+                                    <div class="tip-step">Añade unas gotas a tu baño para un ritual de autocuidado</div>
+                                    <div class="tip-step">Úsala como tónico facial para nutrir tu piel naturalmente</div>
+                                    <div class="tip-step">Pulveriza en tu almohada antes de dormir para sueños amorosos</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Autoestima elevada, piel radiante, conexión con la feminidad, paz emocional.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🌻</span>
+                                <h3 class="tip-title">Girasol para la Confianza</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">La esencia de girasol nos ayuda a brillar con luz propia, fortaleciendo nuestra autoconfianza y capacidad de liderazgo personal.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Medita frente a un girasol durante 10 minutos cada día</div>
+                                    <div class="tip-step">Visualiza su energía solar llenando tu plexo solar</div>
+                                    <div class="tip-step">Repite: "Brillo con mi luz única y auténtica"</div>
+                                    <div class="tip-step">Lleva semillas de girasol como amuleto de confianza</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Confianza personal, liderazgo natural, energía solar, autenticidad.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🌿</span>
+                                <h3 class="tip-title">Lavanda para la Paz Interior</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">La lavanda es la flor de la tranquilidad y la purificación, ideal para calmar la mente y crear espacios de paz en nuestra vida diaria.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Prepara un saquito de lavanda seca para tu almohada</div>
+                                    <div class="tip-step">Añade aceite esencial de lavanda a un difusor durante la meditación</div>
+                                    <div class="tip-step">Toma té de lavanda antes de dormir para un descanso reparador</div>
+                                    <div class="tip-step">Úsala en baños relajantes después de días estresantes</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Relajación profunda, mejor calidad del sueño, reducción de ansiedad, purificación energética.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN RITUALES -->
+                <div id="rituals" class="section rituals-section">
+                    <h2 class="section-title">Rituales Sagrados</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🕯️</span>
+                                <h3 class="tip-title">Ritual de Limpieza Energética</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Un ritual semanal para limpiar las energías densas acumuladas y renovar tu campo áurico con vibraciones elevadas.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Enciende incienso de salvia blanca o palo santo</div>
+                                    <div class="tip-step">Camina por tu hogar en sentido horario llevando el humo</div>
+                                    <div class="tip-step">Visualiza la luz dorada llenando cada espacio</div>
+                                    <div class="tip-step">Termina con una ducha con sal marina y aceite de eucalipto</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Limpieza energética, protección del hogar, renovación personal, claridad mental.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🌅</span>
+                                <h3 class="tip-title">Ritual Matutino de Gratitud</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Comienza cada día conectando con la gratitud y estableciendo intenciones positivas para las horas que vienen.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Al despertar, antes de levantarte, respira profundamente 3 veces</div>
+                                    <div class="tip-step">Menciona 3 cosas por las que te sientes agradecida</div>
+                                    <div class="tip-step">Establece una intención positiva para el día</div>
+                                    <div class="tip-step">Bebe un vaso de agua con limón mientras visualizas tu día ideal</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Actitud positiva, claridad de propósito, energía elevada, manifestación consciente.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🛁</span>
+                                <h3 class="tip-title">Baño Ritual de Renovación</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Un ritual de purificación que combina elementos naturales para renovar tu energía y conectar con tu esencia femenina.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Llena la bañera con agua tibia y añade sal del Himalaya</div>
+                                    <div class="tip-step">Agrega pétalos de rosa y unas gotas de aceite de ylang ylang</div>
+                                    <div class="tip-step">Enciende velas blancas alrededor de la bañera</div>
+                                    <div class="tip-step">Sumérgete durante 20 minutos mientras meditas en tu renovación</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Purificación energética, conexión con la feminidad, relajación profunda, renovación celular.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">📿</span>
+                                <h3 class="tip-title">Círculo de Protección</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Un ritual de protección energética para crear un escudo de luz que te acompañe durante el día.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Siéntate en posición cómoda y cierra los ojos</div>
+                                    <div class="tip-step">Visualiza una esfera de luz dorada rodeándote completamente</div>
+                                    <div class="tip-step">Repite: "Estoy protegida por la luz divina"</div>
+                                    <div class="tip-step">Lleva contigo un amuleto de protección (cuarzo, ojo turco, etc.)</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Protección energética, confianza personal, paz mental, conexión espiritual.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN BIENESTAR -->
+                <div id="wellness" class="section wellness-section">
+                    <h2 class="section-title">Bienestar Integral</h2>
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🧘‍♀️</span>
+                                <h3 class="tip-title">Meditación de 5 Minutos</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Una práctica diaria simple pero poderosa para centrar tu mente y conectar con tu paz interior, perfecta para principiantes.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Siéntate cómodamente con la espalda recta</div>
+                                    <div class="tip-step">Cierra los ojos y enfócate en tu respiración natural</div>
+                                    <div class="tip-step">Cuenta las respiraciones del 1 al 10 y vuelve a empezar</div>
+                                    <div class="tip-step">Si tu mente divaga, gentilmente regresa al conteo</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Reducción del estrés, mayor concentración, paz mental, equilibrio emocional.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🌱</span>
+                                <h3 class="tip-title">Alimentación Consciente</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Transforma tu relación con la comida practicando la alimentación consciente para nutrir tanto tu cuerpo como tu alma.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Come sin distracciones (TV, teléfono, etc.)</div>
+                                    <div class="tip-step">Mastica lentamente y saborea cada bocado</div>
+                                    <div class="tip-step">Agradece por los alimentos antes de comer</div>
+                                    <div class="tip-step">Escucha las señales de hambre y saciedad de tu cuerpo</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Mejor digestión, relación saludable con la comida, mindfulness, nutrición óptima.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">💧</span>
+                                <h3 class="tip-title">Hidratación Energética</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Eleva la vibración de tu agua y potencia sus beneficios con intenciones y elementos naturales para una hidratación consciente.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Coloca cristales de cuarzo alrededor de tu botella de agua</div>
+                                    <div class="tip-step">Sostén el agua entre tus manos y envía intenciones de amor</div>
+                                    <div class="tip-step">Añade unas gotas de limón y una pizca de sal del Himalaya</div>
+                                    <div class="tip-step">Bebe lentamente mientras agradeces por la hidratación</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Hidratación óptima, energía elevada, purificación celular, conexión consciente.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-card">
+                            <div class="tip-header">
+                                <span class="tip-icon">🌙</span>
+                                <h3 class="tip-title">Ritual Nocturno de Descanso</h3>
+                            </div>
+                            <div class="tip-content">
+                                <p class="tip-description">Prepara tu mente y cuerpo para un descanso reparador con este ritual que honra la transición del día a la noche.</p>
+                                <div class="tip-steps">
+                                    <div class="tip-step">Desconéctate de dispositivos electrónicos 1 hora antes de dormir</div>
+                                    <div class="tip-step">Toma una infusión de manzanilla o valeriana</div>
+                                    <div class="tip-step">Escribe 3 logros del día en un diario de gratitud</div>
+                                    <div class="tip-step">Practica respiración profunda mientras te relajas en la cama</div>
+                                </div>
+                                <div class="tip-benefits">
+                                    <h4>Beneficios:</h4>
+                                    <p>Mejor calidad del sueño, relajación profunda, procesamiento emocional, renovación celular.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renalma | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación móvil
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = mobileNav.querySelectorAll('a');
+
+        function openMenu() {
+            mobileNav.classList.add('is-active');
+            document.body.classList.add('nav-open');
+        }
+
+        function closeMenu() {
+            mobileNav.classList.remove('is-active');
+            document.body.classList.remove('nav-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Animaciones al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos con animación
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navegación de categorías
+        function showSection(sectionName) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Mostrar la sección seleccionada
+            const targetSection = document.getElementById(sectionName);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+
+            // Actualizar botones activos
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

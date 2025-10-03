@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masajes y Terapias | Renalma - Bienestar Integral</title>
+
+    <!-- METATAGS PARA REDES SOCIALES -->
+    <meta property="og:title" content="Masajes y Terapias | Renalma - Bienestar Integral" />
+    <meta property="og:description" content="Descubre nuestra gama completa de masajes terapéuticos y relajantes diseñados para tu bienestar físico y emocional." />
+    <meta property="og:image" content="https://renalmamasajes.github.io/files/solocuerpo.png" />
+    <meta property="og:url" content="https://renalma.cl/masajes" />
+    <meta property="og:type" content="website" />
+
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --light-gray: #E4D4C8;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15); }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: rgba(252, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
+        .desktop-nav { display: flex; align-items: center; gap: 40px; }
+        .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+        .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
+        
+        .desktop-nav .btn {
+            background-image: none;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            font-size: 1em;
+        }
+        .desktop-nav .btn:hover { background-color: var(--primary-color); }
+
+        .desktop-nav a:not(.btn)::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .desktop-nav a:not(.btn):hover::after { width: 100%; }
+        
+        .hamburger-menu { display: none; }
+
+        /* --- MENÚ MÓVIL --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        .mobile-nav.is-active { left: 0; }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu-header .logo { max-width: 180px; }
+        #close-menu-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 2.8em; color: var(--text-color); line-height: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        .mobile-nav a {
+            font-family: var(--font-title);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .mobile-nav .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            text-align: center; height: 70vh; min-height: 400px;
+            background-image: linear-gradient(rgba(60, 54, 51, 0.5), rgba(60, 54, 51, 0.5)), url('https://renalmamasajes.github.io/files/img-inicio.jpg');
+            background-size: cover; background-position: center;
+            color: var(--white-color); padding: 0 20px; margin-top: 80px;
+        }
+        .hero-text { max-width: 800px; animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { font-family: var(--font-title); font-size: 4em; font-weight: 600; margin: 0 0 20px 0; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 30px; }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { padding: 80px 0; }
+        .section-title { font-family: var(--font-title); font-size: 3em; color: var(--primary-color); margin-bottom: 20px; text-align: center; }
+        .section-subtitle { text-align: center; font-size: 1.2em; color: var(--secondary-color); max-width: 600px; margin: 0 auto 60px auto; }
+
+        /* --- GRID DE MASAJES --- */
+        .masajes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 80px; }
+        .masaje-card {
+            background: var(--white-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .masaje-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15); }
+
+        .masaje-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .masaje-card:hover .masaje-image { transform: scale(1.05); }
+
+        .masaje-content { padding: 30px; }
+        .masaje-title { font-family: var(--font-title); font-size: 1.8em; color: var(--primary-color); margin-bottom: 15px; }
+        .masaje-description { font-size: 1em; margin-bottom: 20px; color: var(--text-color); line-height: 1.6; }
+        .masaje-benefits { margin-bottom: 25px; }
+        .masaje-benefits h4 { font-family: var(--font-title); color: var(--secondary-color); margin-bottom: 10px; font-size: 1.2em; }
+        .benefit-tag {
+            display: inline-block;
+            background: var(--bg-color);
+            color: var(--secondary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin: 3px;
+            font-weight: 600;
+        }
+
+        .masaje-cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+        }
+        .masaje-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+        .masaje-link:hover { color: var(--secondary-color); }
+
+        .btn-small {
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-small:hover { background: var(--secondary-color); transform: translateY(-2px); }
+
+        /* --- SECCIÓN DE BENEFICIOS --- */
+        .benefits-section {
+            background: var(--white-color);
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        .benefit-card:hover { transform: translateY(-10px); }
+        .benefit-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .benefit-title {
+            font-family: var(--font-title);
+            font-size: 1.8em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* --- CALL TO ACTION --- */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            padding: 80px 0;
+            text-align: center;
+            margin: 80px 0;
+        }
+        .cta-title {
+            font-family: var(--font-title);
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .cta-text {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-btn {
+            background: var(--white-color);
+            color: var(--primary-color);
+            font-size: 1.1em;
+            padding: 15px 40px;
+        }
+
+        footer { background-color: var(--secondary-color); color: var(--bg-color); text-align: center; padding: 30px 20px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-logo { max-width: 160px; }
+            .hamburger-menu {
+                display: block; cursor: pointer; border: none; background: transparent;
+                z-index: 1001; position: relative; width: 30px; height: 21px;
+            }
+            .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
+            
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.1em; }
+            .masajes-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .section-title { font-size: 2.2em; }
+            .mobile-nav a { font-size: 2em; }
+        }
+
+        @media (max-width: 600px) {
+            .benefits-grid { grid-template-columns: 1fr; }
+            .masaje-cta { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html">
+                <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                    <li><a href="tips.html">Tips</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="agenda.html" class="btn">Agendar Cita</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu-header">
+            <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+            <button id="close-menu-btn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="masajes.html">Masajes</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="agenda.html" class="btn">Agendar Cita</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">Masajes y Terapias</h1>
+                <p class="hero-subtitle">Descubre el poder sanador del toque consciente y la conexión profunda contigo misma</p>
+                <a href="agenda.html" class="btn">Agenda tu Sesión</a>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">
+                    Cada masaje es una experiencia única diseñada para atender las necesidades específicas de tu cuerpo y alma.
+                </p>
+
+                <div class="masajes-grid">
+                    <!-- Full Body Energético -->
+                    <div class="masaje-card">
+                        <img src="https://renalmamasajes.github.io/files/full-doby.jpg" alt="Full Body Energético" class="masaje-image">
+                        <div class="masaje-content">
+                            <h3 class="masaje-title">Full Body Energético</h3>
+                            <p class="masaje-description">
+                                Una experiencia integral que combina técnicas reductivas y energéticas para moldear la silueta, 
+                                activar la circulación y renovar tu energía vital desde la cabeza hasta los pies.
+                            </p>
+                            <div class="masaje-benefits">
+                                <h4>Beneficios principales:</h4>
+                                <span class="benefit-tag">Moldea la silueta</span>
+                                <span class="benefit-tag">Activa circulación</span>
+                                <span class="benefit-tag">Renueva energía</span>
+                                <span class="benefit-tag">Reduce medidas</span>
+                            </div>
+                            <div class="masaje-cta">
+                                <a href="full-body-energetico.html" class="masaje-link">Conoce más detalles →</a>
+                                <a href="agenda.html" class="btn-small">Agendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Levantamiento de Glúteos -->
+                    <div class="masaje-card">
+                        <img src="https://renalmamasajes.github.io/files/gluteos.jpg" alt="Levantamiento de Glúteos" class="masaje-image">
+                        <div class="masaje-content">
+                            <h3 class="masaje-title">Levantamiento de Glúteos</h3>
+                            <p class="masaje-description">
+                                Técnica manual especializada enfocada en reafirmar, tonificar y levantar la zona glútea, 
+                                mejorando la apariencia de la piel y potenciando tu confianza natural.
+                            </p>
+                            <div class="masaje-benefits">
+                                <h4>Beneficios principales:</h4>
+                                <span class="benefit-tag">Reafirma glúteos</span>
+                                <span class="benefit-tag">Mejora textura</span>
+                                <span class="benefit-tag">Efecto lifting</span>
+                                <span class="benefit-tag">Aumenta confianza</span>
+                            </div>
+                            <div class="masaje-cta">
+                                <a href="levantamiento-gluteos.html" class="masaje-link">Conoce más detalles →</a>
+                                <a href="agenda.html" class="btn-small">Agendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Masaje con Piedras Calientes -->
+                    <div class="masaje-card">
+                        <img src="https://renalmamasajes.github.io/files/piedras-calientes.jpg" alt="Masaje con Piedras Calientes" class="masaje-image">
+                        <div class="masaje-content">
+                            <h3 class="masaje-title">Masaje con Piedras Calientes</h3>
+                            <p class="masaje-description">
+                                El calor profundo de las piedras volcánicas alivia tensiones musculares, mejora la circulación 
+                                y aporta una profunda sensación de calma y renovación energética.
+                            </p>
+                            <div class="masaje-benefits">
+                                <h4>Beneficios principales:</h4>
+                                <span class="benefit-tag">Calor terapéutico</span>
+                                <span class="benefit-tag">Relaja músculos</span>
+                                <span class="benefit-tag">Mejora circulación</span>
+                                <span class="benefit-tag">Paz profunda</span>
+                            </div>
+                            <div class="masaje-cta">
+                                <a href="piedras-calientes.html" class="masaje-link">Conoce más detalles →</a>
+                                <a href="agenda.html" class="btn-small">Agendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drenaje Linfático Abdominal -->
+                    <div class="masaje-card">
+                        <img src="https://renalmamasajes.github.io/files/abdomen.jpg" alt="Drenaje Linfático Abdominal" class="masaje-image">
+                        <div class="masaje-content">
+                            <h3 class="masaje-title">Drenaje Linfático Abdominal</h3>
+                            <p class="masaje-description">
+                                Masaje suave y especializado que estimula la eliminación de toxinas, reduce la retención 
+                                de líquidos y favorece la desinflamación del área abdominal.
+                            </p>
+                            <div class="masaje-benefits">
+                                <h4>Beneficios principales:</h4>
+                                <span class="benefit-tag">Elimina toxinas</span>
+                                <span class="benefit-tag">Reduce hinchazón</span>
+                                <span class="benefit-tag">Mejora digestión</span>
+                                <span class="benefit-tag">Desinflamación</span>
+                            </div>
+                            <div class="masaje-cta">
+                                <a href="drenaje-abdominal.html" class="masaje-link">Conoce más detalles →</a>
+                                <a href="agenda.html" class="btn-small">Agendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drenaje para Piernas Cansadas -->
+                    <div class="masaje-card">
+                        <img src="https://renalmamasajes.github.io/files/piernas-cansadas.jpg" alt="Drenaje para Piernas Cansadas" class="masaje-image">
+                        <div class="masaje-content">
+                            <h3 class="masaje-title">Drenaje para Piernas Cansadas</h3>
+                            <p class="masaje-description">
+                                Alivia la pesadez y reduce la hinchazón en piernas y pies, mejorando la circulación. 
+                                Ideal para embarazadas, postparto o personas con trabajos de pie.
+                            </p>
+                            <div class="masaje-benefits">
+                                <h4>Beneficios principales:</h4>
+                                <span class="benefit-tag">Alivia pesadez</span>
+                                <span class="benefit-tag">Reduce hinchazón</span>
+                                <span class="benefit-tag">Mejora circulación</span>
+                                <span class="benefit-tag">Ideal embarazo</span>
+                            </div>
+                            <div class="masaje-cta">
+                                <a href="drenaje-piernas.html" class="masaje-link">Conoce más detalles →</a>
+                                <a href="agenda.html" class="btn-small">Agendar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Masaje Relajante -->
+                    <div class="masaje-card">
+                        <img src="https://renalmamasajes.github.io/files/masaje-relajane.jpg" alt="Masaje Relajante" class="masaje-image">
+                        <div class="masaje-content">
+                            <h3 class="masaje-title">Masaje Relajante</h3>
+                            <p class="masaje-description">
+                                Una técnica suave y envolvente para liberar la tensión acumulada, calmar la mente 
+                                y equilibrar tu energía interior. Perfecto para desconectar del estrés diario.
+                            </p>
+                            <div class="masaje-benefits">
+                                <h4>Beneficios principales:</h4>
+                                <span class="benefit-tag">Libera tensión</span>
+                                <span class="benefit-tag">Calma mental</span>
+                                <span class="benefit-tag">Equilibra energía</span>
+                                <span class="benefit-tag">Reduce estrés</span>
+                            </div>
+                            <div class="masaje-cta">
+                                <a href="masajerelajacion.html" class="masaje-link">Conoce más detalles →</a>
+                                <a href="agenda.html" class="btn-small">Agendar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">¿Por Qué Elegir Renalma?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🌸</span>
+                        <h3 class="benefit-title">Enfoque Holístico</h3>
+                        <p>Tratamos cuerpo, mente y espíritu como una unidad integral para un bienestar completo.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">👐</span>
+                        <h3 class="benefit-title">Técnicas Especializadas</h3>
+                        <p>Combinamos métodos tradicionales con técnicas modernas para resultados óptimos.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🕯️</span>
+                        <h3 class="benefit-title">Ambiente Sagrado</h3>
+                        <p>Espacios diseñados para crear una atmósfera de paz y conexión profunda.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">💖</span>
+                        <h3 class="benefit-title">Atención Personalizada</h3>
+                        <p>Cada sesión se adapta a tus necesidades específicas y estado emocional del momento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">¿Lista para tu Transformación?</h2>
+                <p class="cta-text">
+                    Cada masaje es una oportunidad de reconectar contigo misma, liberar lo que ya no necesitas 
+                    y abrirte a una nueva versión de ti. Tu bienestar te está esperando.
+                </p>
+                <a href="agenda.html" class="btn cta-btn">Agenda tu Sesión Ahora</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renalma | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación móvil
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = mobileNav.querySelectorAll('a');
+
+        function openMenu() {
+            mobileNav.classList.add('is-active');
+            document.body.classList.add('nav-open');
+        }
+
+        function closeMenu() {
+            mobileNav.classList.remove('is-active');
+            document.body.classList.remove('nav-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drenaje Linfático Abdominal | Renalma - Masajes y Bienestar</title>
+
+    <!-- METATAGS PARA REDES SOCIALES -->
+    <meta property="og:title" content="Drenaje Linfático Abdominal | Renalma - Masajes y Bienestar" />
+    <meta property="og:description" content="Masaje suave que estimula la eliminación de toxinas, reduce la retención de líquidos y favorece la desinflamación abdominal." />
+    <meta property="og:image" content="https://renalmamasajes.github.io/files/abdomen.jpg" />
+    <meta property="og:url" content="https://renalma.cl/drenaje-abdominal" />
+    <meta property="og:type" content="website" />
+
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --light-gray: #E4D4C8;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15); }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: rgba(252, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
+        .desktop-nav { display: flex; align-items: center; gap: 40px; }
+        .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+        .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
+        
+        .desktop-nav .btn {
+            background-image: none;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            font-size: 1em;
+        }
+        .desktop-nav .btn:hover { background-color: var(--primary-color); }
+
+        .desktop-nav a:not(.btn)::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .desktop-nav a:not(.btn):hover::after { width: 100%; }
+        
+        .hamburger-menu { display: none; }
+
+        /* --- MENÚ MÓVIL --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        .mobile-nav.is-active { left: 0; }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu-header .logo { max-width: 180px; }
+        #close-menu-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 2.8em; color: var(--text-color); line-height: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        .mobile-nav a {
+            font-family: var(--font-title);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .mobile-nav .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            text-align: center; height: 70vh; min-height: 400px;
+            background-image: linear-gradient(rgba(60, 54, 51, 0.6), rgba(60, 54, 51, 0.6)), url('https://renalmamasajes.github.io/files/abdomen.jpg');
+            background-size: cover; background-position: center;
+            color: var(--white-color); padding: 0 20px; margin-top: 80px;
+        }
+        .hero-text { max-width: 800px; animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { font-family: var(--font-title); font-size: 4em; font-weight: 600; margin: 0 0 20px 0; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 30px; }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { padding: 80px 0; }
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .content-text { }
+        .content-image { text-align: center; }
+        .content-image img { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); }
+
+        .section-title { font-family: var(--font-title); font-size: 2.8em; color: var(--primary-color); margin-bottom: 30px; }
+        .section-text { font-size: 1.1em; margin-bottom: 25px; }
+
+        .benefits-list {
+            background: var(--white-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(141, 123, 104, 0.15);
+            margin: 40px 0;
+        }
+        .benefits-list h3 { font-family: var(--font-title); font-size: 2.2em; color: var(--primary-color); margin-bottom: 25px; }
+        .benefit-item { margin-bottom: 20px; padding-left: 30px; position: relative; }
+        .benefit-item::before { content: '💧'; position: absolute; left: 0; top: 0; font-size: 1.2em; }
+
+        .lymphatic-system {
+            background: linear-gradient(135deg, #e8f4f8, #d1e7dd);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .system-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .system-card {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .system-card:hover { transform: translateY(-10px); }
+        .system-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            margin: 0 auto 20px auto;
+        }
+        .system-title { font-family: var(--font-title); font-size: 1.8em; color: var(--secondary-color); margin-bottom: 15px; }
+
+        .conditions-section {
+            background: var(--white-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .conditions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .condition-item {
+            padding: 25px;
+            background: var(--bg-color);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        .condition-item:hover { transform: translateX(10px); }
+        .condition-title { font-weight: 600; color: var(--secondary-color); margin-bottom: 10px; }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 15px;
+            margin: 60px 0;
+        }
+        .cta-title { font-family: var(--font-title); font-size: 2.5em; margin-bottom: 20px; }
+        .cta-text { font-size: 1.2em; margin-bottom: 30px; }
+        .cta-btn {
+            background: var(--white-color);
+            color: var(--primary-color);
+            font-size: 1.1em;
+            padding: 15px 40px;
+        }
+
+        footer { background-color: var(--secondary-color); color: var(--bg-color); text-align: center; padding: 30px 20px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-logo { max-width: 160px; }
+            .hamburger-menu {
+                display: block; cursor: pointer; border: none; background: transparent;
+                z-index: 1001; position: relative; width: 30px; height: 21px;
+            }
+            .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
+            
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.1em; }
+            .content-grid { grid-template-columns: 1fr; gap: 40px; }
+            .system-grid { grid-template-columns: 1fr; }
+            .conditions-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2.2em; }
+            .mobile-nav a { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html">
+                <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                    <li><a href="tips.html">Tips</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="agenda.html" class="btn">Agendar Cita</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu-header">
+            <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+            <button id="close-menu-btn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="masajes.html">Masajes</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="agenda.html" class="btn">Agendar Cita</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">Drenaje Linfático Abdominal</h1>
+                <p class="hero-subtitle">Desintoxica, desinflamay renueva tu bienestar interno</p>
+                <a href="agenda.html" class="btn">Reserva tu Sesión</a>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <h2 class="section-title">Purificación Natural</h2>
+                        <p class="section-text">
+                            El **Drenaje Linfático Abdominal** es una técnica terapéutica suave y especializada que se enfoca en estimular el sistema linfático en la zona abdominal. Esta terapia utiliza movimientos rítmicos y precisos para activar la circulación de la linfa, facilitando la eliminación natural de toxinas y reduciendo la retención de líquidos.
+                        </p>
+                        <p class="section-text">
+                            Durante esta sesión de 60 minutos, aplicamos técnicas manuales específicas que siguen el recorrido natural del sistema linfático abdominal. Los movimientos son suaves pero efectivos, diseñados para estimular los ganglios linfáticos y promover el drenaje de líquidos acumulados en la zona.
+                        </p>
+                        <p class="section-text">
+                            Esta terapia es ideal para personas que experimentan hinchazón abdominal, retención de líquidos, problemas digestivos o simplemente buscan una desintoxicación natural y profunda del organismo.
+                        </p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://renalmamasajes.github.io/files/abdomen.jpg" alt="Drenaje Linfático Abdominal">
+                    </div>
+                </div>
+
+                <div class="benefits-list">
+                    <h3>Beneficios del Drenaje Linfático Abdominal</h3>
+                    <div class="benefit-item">
+                        <strong>Eliminación de toxinas:</strong> Estimula la eliminación natural de desechos y toxinas acumuladas.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Reducción de hinchazón:</strong> Disminuye significativamente la hinchazón y distensión abdominal.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Mejora digestiva:</strong> Favorece el funcionamiento del sistema digestivo y reduce molestias.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Desintoxicación profunda:</strong> Apoya los procesos naturales de depuración del organismo.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Reducción de retención:</strong> Elimina el exceso de líquidos retenidos en los tejidos.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Mejora del tránsito:</strong> Estimula el movimiento intestinal y mejora la regularidad.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lymphatic-system">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">El Sistema Linfático Abdominal</h2>
+                <div class="system-grid">
+                    <div class="system-card">
+                        <div class="system-icon">🔄</div>
+                        <h3 class="system-title">Circulación Linfática</h3>
+                        <p>Red de vasos que transporta la linfa, un líquido rico en glóbulos blancos que ayuda a defender el organismo.</p>
+                    </div>
+                    <div class="system-card">
+                        <div class="system-icon">🛡️</div>
+                        <h3 class="system-title">Ganglios Linfáticos</h3>
+                        <p>Filtros naturales que atrapan bacterias, virus y otras sustancias dañinas antes de que lleguen al torrente sanguíneo.</p>
+                    </div>
+                    <div class="system-card">
+                        <div class="system-icon">🧹</div>
+                        <h3 class="system-title">Función Depurativa</h3>
+                        <p>Elimina desechos celulares, proteínas y líquidos excedentes de los espacios entre las células.</p>
+                    </div>
+                    <div class="system-card">
+                        <div class="system-icon">⚖️</div>
+                        <h3 class="system-title">Equilibrio Hídrico</h3>
+                        <p>Mantiene el equilibrio de líquidos en el cuerpo, evitando la acumulación excesiva en los tejidos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="conditions-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">¿Cuándo es Recomendado?</h2>
+                <div class="conditions-grid">
+                    <div class="condition-item">
+                        <h4 class="condition-title">Hinchazón Abdominal</h4>
+                        <p>Cuando experimentas sensación de pesadez y distensión en el abdomen.</p>
+                    </div>
+                    <div class="condition-item">
+                        <h4 class="condition-title">Retención de Líquidos</h4>
+                        <p>Para eliminar el exceso de líquidos acumulados en los tejidos abdominales.</p>
+                    </div>
+                    <div class="condition-item">
+                        <h4 class="condition-title">Problemas Digestivos</h4>
+                        <p>Cuando hay lentitud digestiva, estreñimiento o molestias intestinales.</p>
+                    </div>
+                    <div class="condition-item">
+                        <h4 class="condition-title">Post-Cirugía</h4>
+                        <p>Para acelerar la recuperación después de intervenciones abdominales (con autorización médica).</p>
+                    </div>
+                    <div class="condition-item">
+                        <h4 class="condition-title">Desintoxicación</h4>
+                        <p>Como parte de un programa de limpieza y depuración del organismo.</p>
+                    </div>
+                    <div class="condition-item">
+                        <h4 class="condition-title">Síndrome Premenstrual</h4>
+                        <p>Para aliviar la hinchazón y molestias asociadas al ciclo menstrual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">¿Lista para Desintoxicar y Renovar?</h2>
+                <p class="cta-text">
+                    Libera tu cuerpo de toxinas y líquidos retenidos con esta terapia suave pero efectiva. 
+                    Tu abdomen se sentirá más liviano y tu bienestar general mejorará notablemente.
+                </p>
+                <a href="agenda.html" class="btn cta-btn">Agenda tu Drenaje Linfático Abdominal</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renalma | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = mobileNav.querySelectorAll('a');
+
+        function openMenu() {
+            mobileNav.classList.add('is-active');
+            document.body.classList.add('nav-open');
+        }
+
+        function closeMenu() {
+            mobileNav.classList.remove('is-active');
+            document.body.classList.remove('nav-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>

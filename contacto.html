@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Renalma - Conecta con tu Bienestar</title>
+
+    <!-- METATAGS PARA REDES SOCIALES -->
+    <meta property="og:title" content="Contacto | Renalma - Conecta con tu Bienestar" />
+    <meta property="og:description" content="Contáctanos para agendar tu momento sagrado de bienestar. Estamos aquí para acompañarte en tu camino hacia el equilibrio." />
+    <meta property="og:image" content="https://renalmamasajes.github.io/files/solocuerpo.png" />
+    <meta property="og:url" content="https://renalma.cl/contacto" />
+    <meta property="og:type" content="website" />
+
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --light-gray: #E4D4C8;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15); }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: rgba(252, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
+        .desktop-nav { display: flex; align-items: center; gap: 40px; }
+        .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+        .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
+        
+        .desktop-nav .btn {
+            background-image: none;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            font-size: 1em;
+        }
+        .desktop-nav .btn:hover { background-color: var(--primary-color); }
+
+        .desktop-nav a:not(.btn)::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .desktop-nav a:not(.btn):hover::after { width: 100%; }
+        
+        .hamburger-menu { display: none; }
+
+        /* --- MENÚ MÓVIL --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        .mobile-nav.is-active { left: 0; }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu-header .logo { max-width: 180px; }
+        #close-menu-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 2.8em; color: var(--text-color); line-height: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        .mobile-nav a {
+            font-family: var(--font-title);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .mobile-nav .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            text-align: center; height: 60vh; min-height: 400px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color); padding: 0 20px; margin-top: 80px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        .hero-text { max-width: 800px; animation: fadeIn 1.5s ease-in-out; position: relative; z-index: 1; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { font-family: var(--font-title); font-size: 4em; font-weight: 600; margin: 0 0 20px 0; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 30px; }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { padding: 80px 0; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+        /* --- INFORMACIÓN DE CONTACTO --- */
+        .contact-info h2 {
+            font-family: var(--font-title);
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: var(--white-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .contact-item:hover { transform: translateY(-5px); }
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        .contact-details h3 {
+            font-family: var(--font-title);
+            font-size: 1.5em;
+            color: var(--secondary-color);
+            margin: 0 0 10px 0;
+        }
+        .contact-details p {
+            margin: 0;
+            color: var(--text-color);
+        }
+        .contact-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-details a:hover { text-decoration: underline; }
+
+        /* --- FORMULARIO DE CONTACTO --- */
+        .contact-form {
+            background: var(--white-color);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            font-family: var(--font-title);
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: var(--font-body);
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .submit-btn:hover { transform: translateY(-2px); }
+
+        /* --- HORARIOS --- */
+        .schedule-section {
+            background: var(--white-color);
+            padding: 60px 0;
+            margin: 80px 0;
+        }
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .schedule-card {
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-color);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        .schedule-card:hover { transform: translateY(-10px); }
+        .schedule-day {
+            font-family: var(--font-title);
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .schedule-time {
+            font-size: 1.1em;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* --- MAPA --- */
+        .map-section {
+            background: var(--bg-color);
+            padding: 60px 0;
+            text-align: center;
+        }
+        .map-container {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: var(--light-gray);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        footer { background-color: var(--secondary-color); color: var(--bg-color); text-align: center; padding: 30px 20px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-logo { max-width: 160px; }
+            .hamburger-menu {
+                display: block; cursor: pointer; border: none; background: transparent;
+                z-index: 1001; position: relative; width: 30px; height: 21px;
+            }
+            .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
+            
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.1em; }
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .form-row { grid-template-columns: 1fr; }
+            .schedule-grid { grid-template-columns: 1fr; }
+            .mobile-nav a { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html">
+                <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                    <li><a href="tips.html">Tips</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="agenda.html" class="btn">Agendar Cita</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu-header">
+            <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+            <button id="close-menu-btn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="masajes.html">Masajes</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="agenda.html" class="btn">Agendar Cita</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">Conecta con Nosotras</h1>
+                <p class="hero-subtitle">Estamos aquí para acompañarte en tu camino hacia el bienestar integral</p>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Información de Contacto -->
+                    <div class="contact-info">
+                        <h2>¿Cómo Podemos Ayudarte?</h2>
+                        <p style="font-size: 1.1em; margin-bottom: 40px; color: var(--secondary-color);">
+                            Cada consulta es importante para nosotras. Te responderemos con el cariño y atención que mereces.
+                        </p>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p><a href="mailto:renalmamasajes@gmail.com">renalmamasajes@gmail.com</a></p>
+                                <p>Respuesta en menos de 24 horas</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h3>WhatsApp</h3>
+                                <p><a href="https://wa.me/56935896293" target="_blank">+569 3589 6293</a></p>
+                                <p>Atención inmediata para consultas y citas</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h3>Ubicación</h3>
+                                <p>Peñalolén, Chile</p>
+                                <p>Dirección exacta se proporciona al confirmar cita</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div class="contact-details">
+                                <h3>Horarios de Atención</h3>
+                                <p>Lunes a Viernes: 9:00 - 19:00</p>
+                                <p>Sábados: 9:00 - 15:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Contacto -->
+                    <div class="contact-form">
+                        <h2>Envíanos un Mensaje</h2>
+                        <form id="contactForm" action="#" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre *</label>
+                                    <input type="text" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellido">Apellido *</label>
+                                    <input type="text" id="apellido" name="apellido" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="tel" id="telefono" name="telefono">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="servicio">Servicio de Interés</label>
+                                <select id="servicio" name="servicio">
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="full-body">Full Body Energético</option>
+                                    <option value="gluteos">Levantamiento de Glúteos</option>
+                                    <option value="piedras">Masaje con Piedras Calientes</option>
+                                    <option value="drenaje-abdomen">Drenaje Linfático Abdominal</option>
+                                    <option value="drenaje-piernas">Drenaje para Piernas Cansadas</option>
+                                    <option value="relajante">Masaje Relajante</option>
+                                    <option value="consulta">Solo consulta general</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje *</label>
+                                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos cómo podemos ayudarte en tu camino hacia el bienestar..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule-section">
+            <div class="container">
+                <h2 style="font-family: var(--font-title); font-size: 3em; color: var(--primary-color); text-align: center; margin-bottom: 50px;">
+                    Horarios de Atención
+                </h2>
+                <div class="schedule-grid">
+                    <div class="schedule-card">
+                        <div class="schedule-day">Lunes - Viernes</div>
+                        <div class="schedule-time">9:00 - 19:00</div>
+                    </div>
+                    <div class="schedule-card">
+                        <div class="schedule-day">Sábados</div>
+                        <div class="schedule-time">9:00 - 15:00</div>
+                    </div>
+                    <div class="schedule-card">
+                        <div class="schedule-day">Domingos</div>
+                        <div class="schedule-time">Cerrado</div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 30px; color: var(--secondary-color); font-style: italic;">
+                    * Horarios especiales disponibles bajo consulta previa
+                </p>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <h2 style="font-family: var(--font-title); font-size: 3em; color: var(--primary-color); text-align: center; margin-bottom: 50px;">
+                    Nuestra Ubicación
+                </h2>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        📍 Mapa de ubicación<br>
+                        <small>Peñalolén, Chile</small>
+                    </div>
+                    <p style="color: var(--secondary-color); margin: 0;">
+                        <strong>Nota:</strong> Por privacidad y seguridad, la dirección exacta se proporciona al momento de confirmar tu cita. 
+                        Nos ubicamos en una zona tranquila y de fácil acceso en Peñalolén.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renalma | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación móvil
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = mobileNav.querySelectorAll('a');
+
+        function openMenu() {
+            mobileNav.classList.add('is-active');
+            document.body.classList.add('nav-open');
+        }
+
+        function closeMenu() {
+            mobileNav.classList.remove('is-active');
+            document.body.classList.remove('nav-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Manejo del formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí puedes agregar la lógica para enviar el formulario
+            // Por ejemplo, usando fetch para enviar a un endpoint
+            
+            alert('¡Gracias por tu mensaje! Te responderemos pronto.');
+            
+            // Limpiar formulario
+            this.reset();
+        });
+    </script>
+</body>
+</html>

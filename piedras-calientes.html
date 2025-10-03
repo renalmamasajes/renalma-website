@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masaje con Piedras Calientes | Renalma - Masajes y Bienestar</title>
+
+    <!-- METATAGS PARA REDES SOCIALES -->
+    <meta property="og:title" content="Masaje con Piedras Calientes | Renalma - Masajes y Bienestar" />
+    <meta property="og:description" content="El calor profundo de las piedras volcánicas alivia tensiones musculares y aporta una profunda sensación de calma y relajación." />
+    <meta property="og:image" content="https://renalmamasajes.github.io/files/piedras-calientes.jpg" />
+    <meta property="og:url" content="https://renalma.cl/piedras-calientes" />
+    <meta property="og:type" content="website" />
+
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --light-gray: #E4D4C8;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15); }
+
+        /* --- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: rgba(252, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
+        .desktop-nav { display: flex; align-items: center; gap: 40px; }
+        .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+        .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
+        
+        .desktop-nav .btn {
+            background-image: none;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            font-size: 1em;
+        }
+        .desktop-nav .btn:hover { background-color: var(--primary-color); }
+
+        .desktop-nav a:not(.btn)::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .desktop-nav a:not(.btn):hover::after { width: 100%; }
+        
+        .hamburger-menu { display: none; }
+
+        /* --- MENÚ MÓVIL --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        .mobile-nav.is-active { left: 0; }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu-header .logo { max-width: 180px; }
+        #close-menu-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 2.8em; color: var(--text-color); line-height: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        .mobile-nav a {
+            font-family: var(--font-title);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .mobile-nav .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            text-align: center; height: 70vh; min-height: 400px;
+            background-image: linear-gradient(rgba(60, 54, 51, 0.5), rgba(60, 54, 51, 0.5)), url('https://renalmamasajes.github.io/files/piedras-calientes.jpg');
+            background-size: cover; background-position: center;
+            color: var(--white-color); padding: 0 20px; margin-top: 80px;
+        }
+        .hero-text { max-width: 800px; animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { font-family: var(--font-title); font-size: 4em; font-weight: 600; margin: 0 0 20px 0; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 30px; }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { padding: 80px 0; }
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .content-text { }
+        .content-image { text-align: center; }
+        .content-image img { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); }
+
+        .section-title { font-family: var(--font-title); font-size: 2.8em; color: var(--primary-color); margin-bottom: 30px; }
+        .section-text { font-size: 1.1em; margin-bottom: 25px; }
+
+        .benefits-list {
+            background: var(--white-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(141, 123, 104, 0.15);
+            margin: 40px 0;
+        }
+        .benefits-list h3 { font-family: var(--font-title); font-size: 2.2em; color: var(--primary-color); margin-bottom: 25px; }
+        .benefit-item { margin-bottom: 20px; padding-left: 30px; position: relative; }
+        .benefit-item::before { content: '🔥'; position: absolute; left: 0; top: 0; font-size: 1.2em; }
+
+        .stones-section {
+            background: linear-gradient(135deg, #2c1810, #4a2c1a);
+            color: var(--white-color);
+            padding: 80px 0;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .stones-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        .stones-content { position: relative; z-index: 1; }
+        .stones-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 50px; }
+        .stone-type {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .stone-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            margin: 0 auto 20px auto;
+        }
+        .stone-title { font-family: var(--font-title); font-size: 1.8em; margin-bottom: 15px; }
+
+        .experience-section {
+            background: var(--white-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .experience-timeline { max-width: 800px; margin: 0 auto; }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--bg-color);
+            border-radius: 15px;
+            position: relative;
+        }
+        .timeline-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        .timeline-content h4 { font-family: var(--font-title); font-size: 1.5em; color: var(--secondary-color); margin-bottom: 10px; }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 15px;
+            margin: 60px 0;
+        }
+        .cta-title { font-family: var(--font-title); font-size: 2.5em; margin-bottom: 20px; }
+        .cta-text { font-size: 1.2em; margin-bottom: 30px; }
+        .cta-btn {
+            background: var(--white-color);
+            color: var(--primary-color);
+            font-size: 1.1em;
+            padding: 15px 40px;
+        }
+
+        footer { background-color: var(--secondary-color); color: var(--bg-color); text-align: center; padding: 30px 20px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-logo { max-width: 160px; }
+            .hamburger-menu {
+                display: block; cursor: pointer; border: none; background: transparent;
+                z-index: 1001; position: relative; width: 30px; height: 21px;
+            }
+            .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
+            
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.1em; }
+            .content-grid { grid-template-columns: 1fr; gap: 40px; }
+            .stones-grid { grid-template-columns: 1fr; }
+            .timeline-item { flex-direction: column; text-align: center; }
+            .timeline-number { margin-right: 0; margin-bottom: 20px; }
+            .section-title { font-size: 2.2em; }
+            .mobile-nav a { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html">
+                <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                    <li><a href="tips.html">Tips</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="agenda.html" class="btn">Agendar Cita</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu-header">
+            <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+            <button id="close-menu-btn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="masajes.html">Masajes</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="agenda.html" class="btn">Agendar Cita</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">Masaje con Piedras Calientes</h1>
+                <p class="hero-subtitle">El poder ancestral del calor volcánico para tu bienestar</p>
+                <a href="agenda.html" class="btn">Reserva tu Sesión</a>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <h2 class="section-title">Terapia Ancestral</h2>
+                        <p class="section-text">
+                            El **Masaje con Piedras Calientes** es una terapia milenaria que combina el poder curativo del calor con técnicas de masaje profundo. Utilizamos piedras volcánicas de basalto que retienen el calor de manera excepcional, proporcionando una experiencia terapéutica única y profundamente relajante.
+                        </p>
+                        <p class="section-text">
+                            Durante esta sesión de 90 minutos, las piedras calientes se colocan estratégicamente en puntos energéticos del cuerpo, mientras que otras se utilizan como extensiones de nuestras manos para realizar movimientos fluidos y profundos. El calor penetra en los músculos, aliviando tensiones profundas y promoviendo una relajación completa.
+                        </p>
+                        <p class="section-text">
+                            Esta terapia es perfecta para quienes buscan una experiencia de relajación profunda, alivio del estrés y una conexión especial con elementos naturales que han sido utilizados durante siglos para la sanación.
+                        </p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://renalmamasajes.github.io/files/piedras-calientes.jpg" alt="Masaje con Piedras Calientes">
+                    </div>
+                </div>
+
+                <div class="benefits-list">
+                    <h3>Beneficios del Masaje con Piedras Calientes</h3>
+                    <div class="benefit-item">
+                        <strong>Relajación profunda:</strong> El calor induce un estado de relajación más profundo que el masaje tradicional.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Alivio de tensiones musculares:</strong> El calor penetra profundamente, relajando músculos tensos y contracturas.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Mejora de la circulación:</strong> El calor dilata los vasos sanguíneos, mejorando el flujo circulatorio.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Reducción del estrés:</strong> Disminuye significativamente los niveles de cortisol y ansiedad.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Alivio del dolor:</strong> Efectivo para dolores crónicos, artritis y fibromialgia.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Mejora del sueño:</strong> Promueve un descanso más reparador y profundo.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stones-section">
+            <div class="container stones-content">
+                <h2 class="section-title" style="text-align: center; color: white; margin-bottom: 30px;">Las Piedras Sagradas</h2>
+                <p style="text-align: center; font-size: 1.2em; margin-bottom: 50px;">
+                    Utilizamos diferentes tipos de piedras, cada una con propiedades únicas para tu bienestar
+                </p>
+                <div class="stones-grid">
+                    <div class="stone-type">
+                        <div class="stone-icon">🌋</div>
+                        <h3 class="stone-title">Basalto Volcánico</h3>
+                        <p>Piedras de origen volcánico que retienen el calor por más tiempo, ideales para relajación profunda.</p>
+                    </div>
+                    <div class="stone-type">
+                        <div class="stone-icon">❄️</div>
+                        <h3 class="stone-title">Mármol Frío</h3>
+                        <p>Utilizadas para contrastar temperaturas y estimular la circulación en áreas específicas.</p>
+                    </div>
+                    <div class="stone-type">
+                        <div class="stone-icon">💎</div>
+                        <h3 class="stone-title">Cuarzo Energético</h3>
+                        <p>Piedras especiales que ayudan a equilibrar los centros energéticos del cuerpo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Tu Experiencia Paso a Paso</h2>
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h4>Preparación del Ambiente</h4>
+                            <p>Creamos un espacio sagrado con música relajante, aromas naturales y la temperatura perfecta para tu comodidad.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h4>Calentamiento de las Piedras</h4>
+                            <p>Las piedras se calientan a la temperatura ideal (entre 50-60°C) para proporcionar calor terapéutico sin causar molestias.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h4>Colocación Estratégica</h4>
+                            <p>Posicionamos las piedras en puntos energéticos clave: columna vertebral, palmas de las manos y entre los dedos de los pies.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h4>Masaje con Piedras</h4>
+                            <p>Utilizamos piedras como extensiones de nuestras manos para realizar movimientos fluidos y profundos por todo el cuerpo.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">5</div>
+                        <div class="timeline-content">
+                            <h4>Integración y Descanso</h4>
+                            <p>Finalizamos con momentos de quietud para que tu cuerpo integre completamente los beneficios del calor terapéutico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">¿Lista para el Calor Sanador?</h2>
+                <p class="cta-text">
+                    Sumérgete en una experiencia ancestral que combina el poder de la naturaleza 
+                    con técnicas de relajación profunda. Tu cuerpo y mente lo merecen.
+                </p>
+                <a href="agenda.html" class="btn cta-btn">Agenda tu Masaje con Piedras Calientes</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renalma | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = mobileNav.querySelectorAll('a');
+
+        function openMenu() {
+            mobileNav.classList.add('is-active');
+            document.body.classList.add('nav-open');
+        }
+
+        function closeMenu() {
+            mobileNav.classList.remove('is-active');
+            document.body.classList.remove('nav-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+</body>
+</html>

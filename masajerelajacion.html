@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masaje Relajante | Renalma - Masajes y Bienestar</title>
+
+    <!-- METATAGS PARA REDES SOCIALES -->
+    <meta property="og:title" content="Masaje Relajante | Renalma - Masajes y Bienestar" />
+    <meta property="og:description" content="Una técnica suave para liberar la tensión acumulada, calmar la mente y equilibrar tu energía interior." />
+    <meta property="og:image" content="https://renalmamasajes.github.io/files/masaje-relajane.jpg" />
+    <meta property="og:url" content="https://renalma.cl/masajerelajacion" />
+    <meta property="og:type" content="website" />
+
+    <!-- FUENTES DE GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --light-gray: #E4D4C8;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            width: 100%;
+        }
+
+        /* --- ANIMACIONES Y EFECTOS INTERACTIVOS --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            padding: 15px 35px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(164, 144, 124, 0.3);
+            position: relative;
+                  }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover { 
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(164, 144, 124, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }-- ENCABEZADO Y NAVEGACIÓN --- */
+        header {
+            background-color: rgba(252, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { max-width: 220px; height: auto; transition: max-width 0.3s ease; }
+        .desktop-nav { display: flex; align-items: center; gap: 40px; }
+        .desktop-nav ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 40px; }
+        .desktop-nav a { text-decoration: none; color: var(--secondary-color); font-weight: 600; font-size: 1.1em; padding-bottom: 5px; position: relative; }
+        
+        .desktop-nav .btn {
+            background-image: none;
+            background-color: var(--text-color);
+            color: var(--white-color);
+            padding: 14px 35px;
+            font-size: 1em;
+        }
+        .desktop-nav .btn:hover { background-color: var(--primary-color); }
+
+        .desktop-nav a:not(.btn)::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+            background-color: var(--primary-color); transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .desktop-nav a:not(.btn):hover::after { width: 100%; }
+        
+        .hamburger-menu { display: none; }
+
+        /* --- MENÚ MÓVIL --- */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px;
+            box-sizing: border-box;
+        }
+        .mobile-nav.is-active { left: 0; }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .mobile-menu-header .logo { max-width: 180px; }
+        #close-menu-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 2.8em; color: var(--text-color); line-height: 1;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 30px;
+        }
+        .mobile-nav a {
+            font-family: var(--font-title);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .mobile-nav .btn {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2em;
+            margin-top: auto;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            position: relative; display: flex; align-items: center; justify-content: center;
+            text-align: center; height: 70vh; min-height: 400px;
+            background-image: linear-gradient(rgba(60, 54, 51, 0.5), rgba(60, 54, 51, 0.5)), url('https://renalmamasajes.github.io/files/masaje-relajane.jpg');
+            background-size: cover; background-position: center;
+            color: var(--white-color); padding: 0 20px; margin-top: 80px;
+        }
+        .hero-text { max-width: 800px; animation: fadeIn 1.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-title { font-family: var(--font-title); font-size: 4em; font-weight: 600; margin: 0 0 20px 0; }
+        .hero-subtitle { font-size: 1.3em; margin-bottom: 30px; }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { padding: 80px 0; }
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .content-text { }
+        .content-image { text-align: center; }
+        .content-image img { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); }
+
+        .section-title { font-family: var(--font-title); font-size: 2.8em; color: var(--primary-color); margin-bottom: 30px; }
+        .section-text { font-size: 1.1em; margin-bottom: 25px; }
+
+        .benefits-list {
+            background: var(--white-color);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(141, 123, 104, 0.15);
+            margin: 40px 0;
+        }
+        .benefits-list h3 { font-family: var(--font-title); font-size: 2.2em; color: var(--primary-color); margin-bottom: 25px; }
+        .benefit-item { margin-bottom: 20px; padding-left: 30px; position: relative; }
+        .benefit-item::before { content: '🌸'; position: absolute; left: 0; top: 0; font-size: 1.2em; }
+
+        .relaxation-levels {
+            background: linear-gradient(135deg, #f8f4f0, #ede0d3);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .levels-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .level-card {
+            background: var(--white-color);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(141, 123, 104, 0.15);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+        .level-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        .level-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+        .level-card:hover::after {
+            opacity: 0.05;
+        }
+        .level-card:hover { 
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(141, 123, 104, 0.25);
+            border-color: var(--primary-color);
+        }
+        .level-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2em;
+            margin: 0 auto 25px auto;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 20px rgba(164, 144, 124, 0.3);
+        }
+
+        .level-card:hover .level-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 30px rgba(164, 144, 124, 0.4);
+        }
+        .level-title { 
+            font-family: var(--font-title); 
+            font-size: 1.9em; 
+            color: var(--secondary-color); 
+            margin-bottom: 15px; 
+            position: relative;
+            z-index: 2;
+            transition: color 0.3s ease;
+        }
+
+        .level-card:hover .level-title {
+            color: var(--primary-color);
+        }
+
+        .level-card p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .aromatherapy-section {
+            background: var(--white-color);
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        .aroma-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        .aroma-item {
+            text-align: center;
+            padding: 25px;
+            background: var(--bg-color);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+        .aroma-item:hover { transform: scale(1.05); }
+        .aroma-icon { font-size: 3em; margin-bottom: 15px; display: block; }
+        .aroma-name { font-family: var(--font-title); font-size: 1.4em; color: var(--secondary-color); margin-bottom: 10px; }
+
+        .mindfulness-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            padding: 60px 0;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .mindfulness-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        .mindfulness-content { position: relative; z-index: 1; text-align: center; max-width: 800px; margin: 0 auto; }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 15px;
+            margin: 60px 0;
+        }
+        .cta-title { font-family: var(--font-title); font-size: 2.5em; margin-bottom: 20px; }
+        .cta-text { font-size: 1.2em; margin-bottom: 30px; }
+        .cta-btn {
+            background: var(--white-color);
+            color: var(--primary-color);
+            font-size: 1.1em;
+            padding: 15px 40px;
+        }
+
+        footer { background-color: var(--secondary-color); color: var(--bg-color); text-align: center; padding: 30px 20px; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .desktop-nav { display: none; }
+            .header-logo { max-width: 160px; }
+            .hamburger-menu {
+                display: block; cursor: pointer; border: none; background: transparent;
+                z-index: 1001; position: relative; width: 30px; height: 21px;
+            }
+            .hamburger-menu .bar { display: block; width: 30px; height: 3px; margin: 6px 0; background-color: var(--text-color); }
+            
+            .hero-title { font-size: 2.5em; }
+            .hero-subtitle { font-size: 1.1em; }
+            .content-grid { grid-template-columns: 1fr; gap: 40px; }
+            .levels-grid { grid-template-columns: 1fr; }
+            .aroma-grid { grid-template-columns: repeat(2, 1fr); }
+            .section-title { font-size: 2.2em; }
+            .mobile-nav a { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html">
+                <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="header-logo">
+            </a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="masajes.html">Masajes</a></li>
+                    <li><a href="tips.html">Tips</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <a href="agenda.html" class="btn">Agendar Cita</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-menu-header">
+            <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+            <button id="close-menu-btn">&times;</button>
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="masajes.html">Masajes</a></li>
+            <li><a href="tips.html">Tips</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="agenda.html" class="btn">Agendar Cita</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1 class="hero-title">Masaje Relajante</h1>
+                <p class="hero-subtitle">Libera tensiones, calma tu mente y equilibra tu energía</p>
+                <a href="agenda.html" class="btn">Reserva tu Sesión</a>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <h2 class="section-title">Paz Interior</h2>
+                        <p class="section-text">
+                            El **Masaje Relajante** es la terapia perfecta para desconectar del estrés diario y reconectar contigo misma. Esta técnica suave y envolvente combina movimientos fluidos y rítmicos con una presión delicada, diseñada específicamente para inducir un estado profundo de relajación y bienestar.
+                        </p>
+                        <p class="section-text">
+                            Durante esta sesión de 60 minutos, utilizamos aceites esenciales naturales y técnicas de masaje que trabajan tanto a nivel físico como emocional. Cada movimiento está pensado para liberar la tensión acumulada en músculos y articulaciones, mientras que la atmósfera creada te permite soltar las preocupaciones y entrar en un estado de calma profunda.
+                        </p>
+                        <p class="section-text">
+                            Esta terapia es ideal para personas que buscan un momento de pausa en sus vidas aceleradas, quienes experimentan estrés, ansiedad o simplemente desean regalarse un momento de autocuidado y conexión interior.
+                        </p>
+                    </div>
+                    <div class="content-image">
+                        <img src="https://renalmamasajes.github.io/files/masaje-relajane.jpg" alt="Masaje Relajante">
+                    </div>
+                </div>
+
+                <div class="benefits-list">
+                    <h3>Beneficios del Masaje Relajante</h3>
+                    <div class="benefit-item">
+                        <strong>Reducción del estrés:</strong> Disminuye significativamente los niveles de cortisol y tensión mental.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Relajación muscular:</strong> Libera tensiones y contracturas de manera suave y efectiva.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Mejora del sueño:</strong> Promueve un descanso más profundo y reparador.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Equilibrio emocional:</strong> Ayuda a procesar emociones y encontrar paz interior.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Mejora circulatoria:</strong> Estimula suavemente la circulación sanguínea y linfática.
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Conexión personal:</strong> Facilita la reconexión contigo misma y tu cuerpo.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relaxation-levels">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Niveles de Relajación</h2>
+                <div class="levels-grid">
+                    <div class="level-card">
+                        <div class="level-icon">🧘</div>
+                        <h3 class="level-title">Relajación Mental</h3>
+                        <p>Calma la mente acelerada, reduce pensamientos intrusivos y promueve la claridad mental.</p>
+                    </div>
+                    <div class="level-card">
+                        <div class="level-icon">💆</div>
+                        <h3 class="level-title">Relajación Física</h3>
+                        <p>Libera tensiones musculares, mejora la flexibilidad y alivia dolores por estrés.</p>
+                    </div>
+                    <div class="level-card">
+                        <div class="level-icon">💖</div>
+                        <h3 class="level-title">Relajación Emocional</h3>
+                        <p>Facilita la liberación de emociones contenidas y promueve el equilibrio interior.</p>
+                    </div>
+                    <div class="level-card">
+                        <div class="level-icon">✨</div>
+                        <h3 class="level-title">Relajación Energética</h3>
+                        <p>Armoniza los centros energéticos y restaura el flujo natural de energía vital.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="aromatherapy-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Aromaterapia Personalizada</h2>
+                <p style="text-align: center; font-size: 1.2em; margin-bottom: 40px; color: var(--secondary-color);">
+                    Seleccionamos aceites esenciales específicos según tus necesidades del momento
+                </p>
+                <div class="aroma-grid">
+                    <div class="aroma-item">
+                        <span class="aroma-icon">🌿</span>
+                        <h4 class="aroma-name">Lavanda</h4>
+                        <p>Calma y tranquilidad</p>
+                    </div>
+                    <div class="aroma-item">
+                        <span class="aroma-icon">🍊</span>
+                        <h4 class="aroma-name">Naranja Dulce</h4>
+                        <p>Alegría y optimismo</p>
+                    </div>
+                    <div class="aroma-item">
+                        <span class="aroma-icon">🌹</span>
+                        <h4 class="aroma-name">Rosa</h4>
+                        <p>Amor propio y autoestima</p>
+                    </div>
+                    <div class="aroma-item">
+                        <span class="aroma-icon">🌲</span>
+                        <h4 class="aroma-name">Eucalipto</h4>
+                        <p>Claridad mental</p>
+                    </div>
+                    <div class="aroma-item">
+                        <span class="aroma-icon">🌸</span>
+                        <h4 class="aroma-name">Ylang Ylang</h4>
+                        <p>Sensualidad y feminidad</p>
+                    </div>
+                    <div class="aroma-item">
+                        <span class="aroma-icon">🍃</span>
+                        <h4 class="aroma-name">Menta</h4>
+                        <p>Energía renovada</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mindfulness-section">
+            <div class="container">
+                <div class="mindfulness-content">
+                    <h2 class="section-title" style="color: white; margin-bottom: 30px;">Mindfulness y Presencia</h2>
+                    <p style="font-size: 1.2em; margin-bottom: 30px;">
+                        Nuestro masaje relajante va más allá de la técnica física. Incorporamos elementos de mindfulness y presencia consciente para crear una experiencia holística que nutre cuerpo, mente y espíritu.
+                    </p>
+                    <p style="font-size: 1.1em; margin-bottom: 30px;">
+                        Durante la sesión, te guiamos suavemente hacia un estado de atención plena, donde puedes observar sin juzgar las sensaciones de tu cuerpo, la calidad de tu respiración y el flujo de tus pensamientos. Esta práctica te ayuda a desarrollar una mayor conciencia corporal y a cultivar la capacidad de relajarte profundamente.
+                    </p>
+                    <p style="font-size: 1.1em;">
+                        El resultado es una experiencia transformadora que no solo alivia las tensiones del momento, sino que también te proporciona herramientas para gestionar el estrés en tu vida diaria.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">¿Lista para tu Momento de Paz?</h2>
+                <p class="cta-text">
+                    Regálate este espacio sagrado de relajación y autocuidado. 
+                    Tu mente, cuerpo y espíritu te lo agradecerán profundamente.
+                </p>
+                <a href="agenda.html" class="btn cta-btn">Agenda tu Masaje Relajante</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renalma | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const navLinks = mobileNav.querySelectorAll('a');
+
+        function openMenu() {
+            mobileNav.classList.add('is-active');
+            document.body.classList.add('nav-open');
+        }
+
+        function closeMenu() {
+            mobileNav.classList.remove('is-active');
+            document.body.classList.remove('nav-open');
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Animaciones al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos con animación
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

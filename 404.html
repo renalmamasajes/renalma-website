@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada | Renalma</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #A4907C;
+            --secondary-color: #8D7B68;
+            --text-color: #3C3633;
+            --bg-color: #F1DEC9;
+            --white-color: #FFFFFF;
+            --font-title: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .error-container {
+            max-width: 600px;
+            background: var(--white-color);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .error-number {
+            font-family: var(--font-title);
+            font-size: 6em;
+            color: var(--primary-color);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-family: var(--font-title);
+            font-size: 2.5em;
+            color: var(--secondary-color);
+            margin: 20px 0;
+        }
+
+        .error-message {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .nav-links {
+            margin-top: 30px;
+        }
+
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 600px) {
+            .error-container {
+                padding: 40px 20px;
+            }
+            .error-number {
+                font-size: 4em;
+            }
+            .error-title {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <img src="https://renalmamasajes.github.io/files/265x86---logo-cabecera-.png" alt="Logo de Renalma" class="logo">
+        
+        <h1 class="error-number">404</h1>
+        <h2 class="error-title">Página no encontrada</h2>
+        
+        <p class="error-message">
+            Lo sentimos, la página que buscas no existe o ha sido movida. 
+            Pero no te preocupes, tu momento de bienestar te está esperando.
+        </p>
+        
+        <a href="/" class="btn">Volver al Inicio</a>
+        <a href="/agenda" class="btn">Agendar Cita</a>
+        
+        <div class="nav-links">
+            <a href="/masajes">Masajes</a>
+            <a href="/tips">Tips</a>
+            <a href="/galeria">Galería</a>
+            <a href="/contacto">Contacto</a>
+        </div>
+    </div>
+</body>
+</html>
